@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Bar Chart</title>
+		<script src="Chart.js"></script>
+	</head>
+	<body>
+		<div style="width: 70%">
+			<canvas id="canvas" height="1500" width="2000"></canvas>
+		</div>
+
+
+	<script>
+	var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+
+	var barChartData = {
+		labels : ["08-01","08-02","08-03","08-04","08-05","08-06","08-07","08-08","08-09","08-10","08-11","08-12","08-13","08-14","08-15","08-16","08-17","08-18","08-19","08-20","08-21","08-22","08-23","08-24","08-25","08-26","08-27","08-28","08-29","08-30","08-31"],
+		datasets : [
+			{
+				fillColor : "rgba(151,187,205,0.5)",
+				strokeColor : "rgba(151,187,205,0.8)",
+				highlightFill : "rgba(151,187,205,0.75)",
+				highlightStroke : "rgba(151,187,205,1)",
+				data : ["557609","466750",
+"502948",
+"768277",
+"665222",
+"670404",
+"151568",
+"868248",
+"525221",
+"477183",
+"651641",
+"674499",
+"711332",
+"686839",
+"661198",
+"491590",
+"459448",
+"782980",
+"637724",
+"735973",
+"656349",
+"582881",
+"470017",
+"449528",
+"595658",
+"666960",
+"606076",
+"813465",
+"572270",
+"324812",
+"327044"]
+			},
+			
+		]
+
+	}
+	window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myBar = new Chart(ctx).Bar(barChartData, {
+			responsive : true
+		});
+	}
+
+	</script>
+	</body>
+</html>
